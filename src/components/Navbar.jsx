@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <>
         <nav onScroll={changeNavBg} className= {`fixed w-full px-20 h-20 flex justify-between items-center z-50 transition-colors duration-300 ${navBg ? 'bg-nav-blue' : 'bg-transparent'}`}>
-            <Link activeClass="active" to="home" spy={true} smooth={true} offset={0} duration={500} className="cursor-pointer pb-4 flex align-items justify-center">
-                <img src={logo} alt="logo" className="w-full h-full object-cover"/>
+            <Link activeClass="active" to="home" spy={true} smooth={true} offset={0} duration={500} className="cursor-pointer w-36 h-16 pb-4 flex align-items justify-center">
+                <img src={logo} alt="logo" className="w-full h-full object-fit"/>
             </Link>
             <div className="flex justify-end">
                 <ul className="flex flex-row gap-10">

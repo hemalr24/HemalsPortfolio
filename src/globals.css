@@ -11,11 +11,11 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-600 rounded-full;
+    @apply bg-white rounded-full;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-black;
+    @apply bg-gray-300;
   }
 
 @keyframes slide{
