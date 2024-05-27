@@ -1,5 +1,6 @@
 import React from 'react';
 import footerLogo from '../images/footer-logo.png';
+import resume from '../resources/hemal-resume.pdf';
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                     <h2 className="text-2xl font-bold mb-2 text-white">Contact Me</h2>
                     <div className="flex justify-between font-bold underline text-white">
                         <a href="https://github.com/hemalr24" target="_blank" rel="noopener noreferrer">Github</a>
-                        <a href="/" target="_blank" rel="noopener noreferrer">Resume</a>
+                        <a href={resume} target="_blank" rel="noopener noreferrer">Resume</a>
                         <a href="https://www.linkedin.com/in/hemal-rajput/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
