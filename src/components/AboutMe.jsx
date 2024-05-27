@@ -4,7 +4,10 @@ const AboutMe = () => {
     return(
         <>
         <h1 className="text-h1 mb-8">About Me</h1>
-        <p className="text-p w-3/4 mb-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p className="text-p w-3/4 mb-32">I'm Hemal! I'm an aspiring full stack engineer currently studying at McMaster University. 
+        I'm forever desiring to expand my horizons with different languages and frameworks while enhancing my current skills. Fun fact, 
+        I have a minor in biochemistry, so I have a keen interest in bioinformatics. Outside of work and school, I play the guitar (which I taught myself!) 
+        and love video games (Stardew Valley and RPGs so count!). Thanks for visiting the site! </p>
         </>
     )
 }
