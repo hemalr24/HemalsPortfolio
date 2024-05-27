@@ -14,7 +14,7 @@ const Footer = () => {
                         <a href="https://www.linkedin.com/in/hemal-rajput/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </div>
                 </div>
-                <div className="w-96 h-fill">
+                <div className="w-96 h-fill align-self-end">
                     <img src={footerLogo} alt="logo" />
                 </div>
             </div>
