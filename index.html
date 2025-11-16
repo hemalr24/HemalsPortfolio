@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemal Rajput | Software Engineer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* Define a sharp, direct font. */
+        html { 
+            font-family: 'Inter', sans-serif; 
+            /* Added smooth scrolling */
+            scroll-behavior: smooth;
+        }
+
+        /* Neobrutalism Core: Stark, High-Contrast Palette */
+        .neo-bg {
+            background-color: #F0F0F0; /* Off-white/light grey background */
+            color: #111111; /* Harsh black text */
+            /* New Creative Backdrop: Subtle, high-contrast diagonal grid */
+            background-image: repeating-linear-gradient(
+                45deg,
+                #FFFFFF 0,
+                #FFFFFF 2px,
+                #E0E0E0 2px, /* Slightly darker shade of grey for the grid lines */
+                #E0E0E0 4px
+            );
+        }
+        
+        /* Ensures anchors (like #experience) stop below the fixed navbar */
+        .scroll-target {
+            scroll-margin-top: 6rem; /* Increased to ensure internal navigation links clear the fixed navbar */
+        }
+
+        /* Accent Colors - Bolder */
+        .accent-primary { color: #007AFF; /* Bolder, Deeper Blue */ }
+        .accent-secondary { color: #FF4500; /* Bolder Orange-Red */ }
+
+        /* --- Global Link Styling --- */
+        /* Underline navigation and footer links on hover */
+        nav a:hover, footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Neobrutalism Card Style: Solid white content box */
+        .neo-card {
+            background-color: #FFFFFF;
+            border: 4px solid #111111; /* Heavy black border */
+            border-radius: 4px; /* Sharp corners */
+            box-shadow: 8px 8px 0px 0px #111111; /* Aggressive offset shadow */
+            transition: transform 0.1s, box-shadow 0.1s;
+            display: block; /* Ensure the anchor tag behaves like a block */
+            text-decoration: none; /* Remove underline from project links */
+            color: #111111; /* Ensure text remains black */
+        }
+
+        .neo-card:hover {
+            /* Slight movement on hover to lean into the digital/interactive feel */
+            transform: translate(2px, 2px);
+            box-shadow: 6px 6px 0px 0px #111111;
+        }
+
+        /* Standardized Link Block Style (for LinkedIn and GitHub in header) */
+        .neo-link-block {
+            text-decoration: none;
+            padding: 8px 16px; /* Standardize padding */
+            border: 2px solid #111111; /* Sharp border */
+            border-radius: 4px;
+            box-shadow: 3px 3px 0px 0px #007AFF; /* Primary accent shadow */
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            background-color: #FFFFFF;
+            color: #111111;
+        }
+
+        /* Smoother Hover for Hero Block Links */
+        .neo-link-block:hover {
+            background-color: #FFFFFF; /* Keep background white */
+            color: #007AFF; /* Change text to primary blue */
+            box-shadow: 3px 3px 0px 0px #FF4500; /* Secondary accent shadow on hover */
+            transform: translate(1px, 1px);
+            text-decoration: underline; /* Underline text on hover */
+        }
+        
+        /* Custom Class for Resume Button (Smoother transition) */
+        .resume-btn {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: #111111;
+            color: #FFFFFF;
+            border-radius: 2px;
+            box-shadow: 4px 4px 0px 0px #FF4500;
+            transition: all 0.2s;
+            border: 2px solid #111111;
+            font-weight: 800;
+        }
+        .resume-btn:hover {
+            background-color: #444444; /* Darker gray background */
+            color: #FF4500; /* Use the accent red for text */
+            box-shadow: 4px 4px 0px 0px #007AFF; /* Primary blue shadow */
+            transform: translate(0px, 0px);
+            text-decoration: underline; /* Underline text on hover */
+        }
+
+        /* Section Title Style */
+        .section-title {
+            background-color: #111111;
+            color: #FFFFFF;
+            padding: 4px 8px;
+            border-radius: 2px;
+            display: inline-flex;
+            font-weight: 900; /* Super bold */
+            text-transform: uppercase;
+        }
+
+        /* Base Skill Tag Style - Cursor removed here */
+        .skill-tag {
+            background-color: #FFFFFF;
+            color: #111111;
+            border: 2px solid #111111;
+            box-shadow: 2px 2px 0px 0px #111111;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        /* Specific Hover Colors for Technologies */
+        .tag-python:hover { background-color: #FFDE57; color: #306998; box-shadow: 2px 2px 0px 0px #306998; }
+        .tag-js:hover { background-color: #F0DB4F; color: #323330; box-shadow: 2px 2px 0px 0px #323330; }
+        .tag-java:hover { background-color: #E67A20; color: #000000; box-shadow: 2px 2px 0px 0px #000000; }
+        .tag-cpp:hover { background-color: #00599C; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #FFFFFF; }
+        .tag-sql:hover { background-color: #FFC0CB; color: #3770A0; box-shadow: 2px 2px 0px 0px #3770A0; }
+        .tag-react:hover { background-color: #61DAFB; color: #000000; box-shadow: 2px 2px 0px 0px #000000; }
+        .tag-nextjs:hover { background-color: #000000; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #007AFF; }
+        .tag-tailwind:hover { background-color: #38B2AC; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #FFFFFF; }
+        .tag-hf:hover { background-color: #FF4500; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #111111; }
+        .tag-postgres:hover { background-color: #336791; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #FFFFFF; }
+        .tag-supabase:hover { background-color: #3ECF8E; color: #111111; box-shadow: 2px 2px 0px 0px #111111; }
+        .tag-strapi:hover { background-color: #2F8DFF; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #111111; }
+        .tag-docker:hover { background-color: #2496ED; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #111111; }
+        .tag-git:hover { background-color: #F1502F; color: #FFFFFF; box-shadow: 2px 2px 0px 0px #111111; }
+
+        /* Work Experience Item Interaction Style - Cursor removed here */
+        .experience-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px dashed #CCCCCC;
+            border-left: 4px solid transparent;
+            padding-left: 12px;
+            transition: all 0.2s ease-in-out;
+        }
+        .experience-item:hover {
+             border-left: 4px solid #007AFF; /* Highlight on hover with primary accent */
+             background-color: #FAFAFA; /* Slight background shift for feedback */
+        }
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* --- Work Experience Date Styling (No Hover Interactivity) --- */
+        .experience-date {
+            /* Base Styles: Primary Blue BG, White Text, Gold Shadow (STATIC) */
+            font-weight: 800; 
+            font-size: 0.75rem; 
+            background-color: #007AFF; /* Primary Blue */
+            color: #FFFFFF; /* White Text */
+            padding: 0.25rem 0.5rem; 
+            border-radius: 0.125rem; 
+            box-shadow: 2px 2px 0px 0px #FFC72C; /* Gold/Yellow Shadow */
+            transition: all 0.2s ease;
+            /* The previous .experience-item:hover .experience-date block has been removed */
+        }
+        
+        /* --- Project Card GitHub Link Styling (Black/Red Reversal on Tag Hover ONLY) --- */
+        .repo-link-tag {
+            /* Base Styles: Black BG, White Text, Red/Orange Shadow */
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background-color: #111111; /* Black BG */
+            color: #FFFFFF; /* White Text */
+            border-radius: 0.125rem;
+            box-shadow: 2px 2px 0px 0px #FF4500; /* Red/Orange Shadow */
+            transition: all 0.2s ease;
+        }
+        
+        /* New Hover: Only when hovering the tag itself, reverse Black/Red */
+        .repo-link-tag:hover {
+            /* Hover Styles: Red BG, Black Text, Black Shadow */
+            background-color: #FF4500; /* Red BG (Reversed) */
+            color: #111111; /* Black Text (Reversed) */
+            box-shadow: 2px 2px 0px 0px #111111; /* Black Shadow */
+            transform: translate(1px, 1px);
+        }
+
+        /* Project Image Placeholder Style */
+        .project-image-placeholder {
+            width: 100%;
+            height: 150px; /* Fixed height for visual uniformity */
+            background-color: #E0E0E0; /* Light grey background */
+            border: 2px solid #111111;
+            border-radius: 2px;
+            box-shadow: 3px 3px 0px 0px #007AFF; /* Primary accent shadow */
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #444444;
+            font-size: 0.875rem;
+            overflow: hidden; /* Important to keep the image within the bounds */
+        }
+        
+        /* Image inside the placeholder (if an actual image is used) */
+        .project-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the area without distortion */
+        }
+
+    </style>
+</head>
+<body class="neo-bg min-h-screen flex flex-col relative text-gray-900">
+
+    <!-- Fixed Navigation Bar (Navbar) -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-black border-b-4 border-black p-3 shadow-2xl">
+        <div class="container mx-auto max-w-7xl flex justify-between items-center px-4 md:px-10">
+            <!-- Logo/Home Link -->
+            <a href="#" class="text-xl font-black text-white hover:text-red-500 transition-colors">HEMAL</a>
+            
+            <!-- Navigation Links -->
+            <div class="space-x-4 md:space-x-8 text-sm font-extrabold flex">
+                <a href="#experience" class="text-white hover:text-blue-400 transition-colors uppercase">Experience</a>
+                <a href="#projects" class="text-white hover:text-blue-400 transition-colors uppercase">Projects</a>
+                <a href="#skills" class="text-white hover:text-blue-400 transition-colors uppercase hidden sm:block">Skills</a>
+                <a href="#education" class="text-white hover:text-blue-400 transition-colors uppercase hidden md:block">Education</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 
+        Main Content Container. Margin applied to header to clear the fixed navbar.
+    -->
+    <div class="container mx-auto p-4 md:p-10 lg:p-12 z-10 max-w-7xl">
+
+        <!-- Header and Contact Info (The original "hero" content) -->
+        <!-- Added mt-16 (4rem margin top) to push the content down reliably -->
+        <header class="text-center mb-12 p-8 neo-card mt-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-black mb-2">
+                HEMAL RAJPUT
+            </h1>
+            <p class="text-xl font-extrabold mb-6">
+                SOFTWARE ENGINEER | <span class="accent-primary">AI/ML</span> & <span class="accent-secondary">FULL-STACK</span>
+            </p>
+            <!-- Standardized spacing using gap- and new block link styles -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 text-sm font-extrabold">
+                <!-- Links (LinkedIn, GitHub) - Using .neo-link-block -->
+                <a href="https://www.linkedin.com/in/hemal-rajput/" target="_blank" class="neo-link-block">
+                    LINKEDIN
+                </a>
+                <a href="https://github.com/hemalr24" target="_blank" class="neo-link-block">
+                    GITHUB
+                </a>
+                <!-- Resume Button - Using new .resume-btn class -->
+                <a href="HemalRajput_Resume_August2025.pdf" target="_blank" class="resume-btn">
+                    VIEW RESUME (PDF)
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Grid Layout (Education, Skills, Experience) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- LEFT COLUMN (Education & Skills) -->
+            <div class="lg:col-span-1 space-y-8">
+
+                <!-- Education Card -->
+                <section id="education" class="p-6 neo-card scroll-target">
+                    <h2 class="flex items-center text-xl font-extrabold mb-4">
+                        <span class="section-title">Education</span>
+                    </h2>
+                    <div class="border-l-4 border-black pl-4 pt-1">
+                        <p class="text-lg font-extrabold">McMaster University</p>
+                        <p class="text-sm font-bold mt-1">BEng in Software Engineering, Expected May 2027</p>
+                        <p class="text-xs mt-1">GPA: <span class="font-extrabold accent-secondary">3.73/4.0</span> | Minor: Biochemistry</p>
+                        <ul class="list-none space-y-1 mt-3 text-sm">
+                            <li><span class="accent-primary font-extrabold mr-1">>></span> Data Structures and Algorithms</li>
+                            <li><span class="accent-primary font-extrabold mr-1">>></span> Concurrent Systems & Databases</li>
+                            <li><span class="accent-primary font-extrabold mr-1">>></span> Natural Language Processing (NLP)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Skills Card -->
+                <section id="skills" class="p-6 neo-card scroll-target">
+                    <h2 class="flex items-center text-xl font-extrabold mb-4">
+                        <span class="section-title">Technologies</span>
+                    </h2>
+                    <div class="flex flex-wrap gap-3">
+                        <!-- Languages -->
+                        <span class="skill-tag tag-python px-3 py-1 text-xs font-extrabold uppercase">Python</span>
+                        <span class="skill-tag tag-js px-3 py-1 text-xs font-extrabold uppercase">JavaScript</span>
+                        <span class="skill-tag tag-java px-3 py-1 text-xs font-extrabold uppercase">Java</span>
+                        <span class="skill-tag tag-cpp px-3 py-1 text-xs font-extrabold uppercase">C/C++</span>
+                        <span class="skill-tag tag-sql px-3 py-1 text-xs font-extrabold uppercase">SQL</span>
+                        <!-- Frameworks & Libraries -->
+                        <span class="skill-tag tag-react px-3 py-1 text-xs font-extrabold uppercase">React/Native</span>
+                        <span class="skill-tag tag-nextjs px-3 py-1 text-xs font-extrabold uppercase">Next.js</span>
+                        <span class="skill-tag tag-tailwind px-3 py-1 text-xs font-extrabold uppercase">Tailwind CSS</span>
+                        <span class="skill-tag tag-hf px-3 py-1 text-xs font-extrabold uppercase">Hugging Face</span>
+                        <!-- Tools & Databases -->
+                        <span class="skill-tag tag-postgres px-3 py-1 text-xs font-extrabold uppercase">PostgreSQL</span>
+                        <span class="skill-tag tag-supabase px-3 py-1 text-xs font-extrabold uppercase">Supabase</span>
+                        <span class="skill-tag tag-strapi px-3 py-1 text-xs font-extrabold uppercase">Strapi</span>
+                        <span class="skill-tag tag-docker px-3 py-1 text-xs font-extrabold uppercase">Docker/MLflow</span>
+                        <span class="skill-tag tag-git px-3 py-1 text-xs font-extrabold uppercase">Git</span>
+                    </div>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN (Experience) -->
+            <div class="lg:col-span-2 space-y-8">
+
+                <!-- Experience Section -->
+                <section id="experience" class="p-6 neo-card scroll-target">
+                    <h2 class="flex items-center text-xl font-extrabold mb-6">
+                        <span class="section-title">Work Experience</span>
+                    </h2>
+
+                    <div>
+                        <!-- Experience Item 1: Canadian Space Agency (CSA) -->
+                        <div class="experience-item">
+                            <h3 class="text-xl font-extrabold accent-primary">Data Scientist and AI</h3>
+                            <div class="flex justify-between items-center text-sm font-bold mb-2">
+                                <span>Canadian Space Agency (CSA) | Longueuil, QC</span>
+                                <!-- Date now uses the experience-date class with STATIC colors -->
+                                <span class="experience-date">Sept 2025-Apr 2026</span>
+                            </div>
+                            <ul class="list-none space-y-2 text-sm">
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Created an LLM evaluation framework, focusing on rating and displaying output from several models.</li>
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Developed an open-source tutorial for the THEMIS space mission, focusing on the analysis of auroras.</li>
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Implemented data science tools for reproducibility, configuring environments (e.g., Docker, MLflow), and automating AI pipelines.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 2: Civiconnect -->
+                        <div class="experience-item">
+                            <h3 class="text-xl font-extrabold accent-primary">Software Developer</h3>
+                            <div class="flex justify-between items-center text-sm font-bold mb-2">
+                                <span>Civiconnect | St. Catharines, ON</span>
+                                <!-- Date now uses the experience-date class with STATIC colors -->
+                                <span class="experience-date">2024</span>
+                            </div>
+                            <ul class="list-none space-y-2 text-sm">
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Designed and implemented a restaurant inventory management system, improving order accuracy and streamlining procurement by 30%.</li>
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Developed and deployed scalable web apps using React, Next.js, Tailwind CSS, and PostgreSQL-based systems (Strapi, Supabase).</li>
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Collaborated in weekly workshops, refining technical expertise and soft skills like teamwork and project management.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 3: Van der Graaf -->
+                        <div class="experience-item">
+                            <h3 class="text-xl font-extrabold accent-primary">Summer Engineering Intern</h3>
+                            <div class="flex justify-between items-center text-sm font-bold mb-2">
+                                <span>Van der Graaf | Brampton, ON</span>
+                                <!-- Date now uses the experience-date class with STATIC colors -->
+                                <span class="experience-date">2022-2023</span>
+                            </div>
+                            <ul class="list-none space-y-2 text-sm">
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Programmed a soldering robot to automate repetitive tasks, improving soldering accuracy and efficiency.</li>
+                                <li><span class="accent-secondary font-extrabold mr-1">-></span> Created and debugged CNC machine programs, enabling precise manufacturing for custom designs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+            
+        </div>
+        <!-- END Main Grid Layout -->
+
+        <!-- PROJECTS SECTION (Now full width) -->
+        <section id="projects" class="scroll-target mt-8">
+            <h2 class="flex items-center text-xl font-extrabold mb-6 p-2">
+                <span class="section-title">Key Projects</span>
+            </h2>
+
+            <!-- This grid remains, allowing projects to flow side-by-side within the full width -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Item 1: MidiMotion - Now a Link -->
+                <a href="https://github.com/hemalr24/MidiMotion" target="_blank" class="p-6 neo-card flex flex-col justify-between">
+                    <!-- IMAGE PLACEHOLDER -->
+                    <div class="project-image-placeholder">
+                        <img src="midimotion_image.jpg" alt="MidiMotion Project" />
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-extrabold accent-primary mb-2">MidiMotion <span class="text-sm font-bold text-gray-500"> (Python)</span></h3>
+                        <p class="text-sm font-semibold mb-3">Real-time hand gesture recognition system to control amplifier settings.</p>
+                        <ul class="list-none space-y-2 text-sm">
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span> Developed a system using camera detection and MIDI signal processing to dynamically adjust volume, gain, and effects on a BOSS-Katana amplifier.</li>
+                        </ul>
+                    </div>
+                    <!-- GitHub Link Block - Hover effect now only applies to the span/text block -->
+                    <div class="mt-4 pt-4 border-t-2 border-solid border-gray-300">
+                        <span class="repo-link-tag">
+                            GitHub Repository
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project Item 2: Sneak Peak - Now a Link -->
+                <a href="https://github.com/hemalr24/SneakPeak" target="_blank" class="p-6 neo-card flex flex-col justify-between">
+                    <div class="project-image-placeholder">
+                        <img src="sneakpeek_image.jpg" alt="Sneak Peak Project" />
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-extrabold accent-primary mb-2">Sneak Peak <span class="text-sm font-bold text-gray-500"> (React Native, Python)</span></h3>
+                        <p class="text-sm font-semibold mb-3">Footwear identification mobile application.</p>
+                        <ul class="list-none space-y-2 text-sm">
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span> Trained a custom machine learning model on Hugging Face for image-based identification.</li>
+                        <li><span class="accent-secondary font-extrabold mr-1">-></span> Engineered RESTful APIs for image upload and identification, enabling real-time predictions on mobile.</li>
+                        </ul>
+                    </div>
+                    <!-- GitHub Link Block - Hover effect now only applies to the span/text block -->
+                    <div class="mt-4 pt-4 border-t-2 border-solid border-gray-300">
+                        <span class="repo-link-tag">
+                            GitHub Repository
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project Item 3: Machine-Learning Training - Now a Link -->
+                <a href="https://github.com/hemalr24/MLTraining" target="_blank" class="p-6 neo-card flex flex-col justify-between">
+                    <div class="project-image-placeholder">
+                        <img src="mltraining_image.jpg" alt="ML Training Project" />
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-extrabold accent-primary mb-2">ML Training <span class="text-sm font-bold text-gray-500"> (Python)</span></h3>
+                        <p class="text-sm font-semibold mb-3">Maze solving application with various algorithms.</p>
+                        <ul class="list-none space-y-2 text-sm">
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span> Trained AI algorithms like BERT and Electra on diverse textual datasets for domain-specific applications.</li>
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span> Conducted model evaluation and optimization, submitting algorithmic predictions to Codabench competitions.</li>
+                        </ul>
+                    </div>
+                    <!-- GitHub Link Block - Hover effect now only applies to the span/text block -->
+                    <div class="mt-4 pt-4 border-t-2 border-solid border-gray-300">
+                        <span class="repo-link-tag">
+                            GitHub Repository
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project Item 4: MazeRunner - Now a Link -->
+                <a href="https://github.com/hemalr24/mazerunner" target="_blank" class="p-6 neo-card flex flex-col justify-between">
+                    <div class="project-image-placeholder">
+                        <img src="mazerunner_image.jpg" alt="Mazerunner Project" />
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-extrabold accent-primary mb-2">Mazeunner<span class="text-sm font-bold text-gray-500"> (Java)</span></h3>
+                        <p class="text-sm font-semibold mb-3">Maze Solving Application.</p>
+                        <ul class="list-none space-y-2 text-sm">
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span> Randomly generated mazes and solved them using various graphing approaches.</li>
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span> Algorithms included Right Hand Rule, Breadth-First Search, Depth-First Search, and Tremeaux.</li>
+                        </ul>
+                    </div>
+                    <!-- GitHub Link Block - Hover effect now only applies to the span/text block -->
+                    <div class="mt-4 pt-4 border-t-2 border-solid border-gray-300">
+                        <span class="repo-link-tag">
+                            GitHub Repository
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Project Item 5: Super Hemmie-o - Now a Link -->
+                <a href="https://github.com/hemalr24/Super-Hemmie-o" target="_blank" class="p-6 neo-card flex flex-col justify-between">
+                    <div class="project-image-placeholder">
+                        <img class="object-bottom" src="platformer_image.png" alt="Platformer Project" />
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-extrabold accent-primary mb-2">Super Hemmie-o<span class="text-sm font-bold text-gray-500"> (Java)</span></h3>
+                        <p class="text-sm font-semibold mb-3">A Mario-Inspired Platformer Game.</p>
+                        <ul class="list-none space-y-2 text-sm">
+                            <li><span class="accent-secondary font-extrabold mr-1">-></span>A simple platformer which includes blocks, traps, fruits, collisions, and endgame conditions using Pygame, complete with custom-made sprites.</li>
+                        </ul>
+                    </div>
+                    <!-- GitHub Link Block - Hover effect now only applies to the span/text block -->
+                    <div class="mt-4 pt-4 border-t-2 border-solid border-gray-300">
+                        <span class="repo-link-tag">
+                            GitHub Repository
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="mt-12 p-4 text-center neo-card space-y-2">
+            <!-- Contact Links (One Line) -->
+            <div class="flex justify-center items-center gap-4 md:gap-8 text-black text-sm font-extrabold uppercase">
+                <!-- GitHub -->
+                <a href="https://github.com/hemalr24" target="_blank" class="hover:text-red-500 transition-colors">
+                    GitHub
+                </a>
+                <span class="text-gray-400 hidden sm:inline-block">|</span>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/hemal-rajput/" target="_blank" class="hover:text-red-500 transition-colors">
+                    LinkedIn
+                </a>
+                <span class="text-gray-400 hidden sm:inline-block">|</span>
+                <!-- View Resume -->
+                <a href="uploaded:HemalRajput_Resume_August2025.pdf" target="_blank" class="hover:text-red-500 transition-colors">
+                    View Resume
+                </a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
