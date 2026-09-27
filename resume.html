@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Hemal Rajput's résumé: software engineering, AI systems at the Canadian Space Agency, full-stack development, and open-source projects."
+    />
+    <title>Résumé — Hemal Rajput</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="resume.css" />
+    <script src="resume.js" defer></script>
+  </head>
+  <body>
+    <div class="resume-toolbar">
+      <a href="index.html">← Back to portfolio</a
+      ><button type="button" id="print-resume" hidden>Print / Save PDF</button>
+    </div>
+    <main class="resume">
+      <header>
+        <h1>Hemal Rajput</h1>
+        <p>
+          Brampton, Ontario ·
+          <a href="mailto:rajput.hemal01@gmail.com">rajput.hemal01@gmail.com</a>
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/hemal-rajput/"
+            >linkedin.com/in/hemal-rajput</a
+          >
+          · <a href="https://github.com/hemalr24">github.com/hemalr24</a>
+        </p>
+      </header>
+      <section aria-labelledby="education">
+        <h2 id="education">Education</h2>
+        <div class="entry-heading">
+          <h3>McMaster University</h3>
+          <span>Expected May 2027</span>
+        </div>
+        <p>
+          BEng in Software Engineering · Minor in Biochemistry · GPA: 3.73/4.0
+        </p>
+        <p class="coursework">
+          <strong>Coursework:</strong> Data Structures & Algorithms, Concurrent
+          System Design, Natural Language Processing, Predictive and Intelligent
+          Control, Signals and Systems
+        </p>
+      </section>
+      <section aria-labelledby="experience">
+        <h2 id="experience">Work Experience</h2>
+        <article>
+          <div class="entry-heading">
+            <h3>Canadian Space Agency</h3>
+            <span>Sept 2025–Present</span>
+          </div>
+          <p class="role">
+            Data Scientist and Artificial Intelligence · Longueuil, QC
+          </p>
+          <ul>
+            <li>
+              Refactored two department-specific AI assistants into a shared
+              Flask and JavaScript platform, consolidating backend and frontend
+              logic so shared fixes propagate across both applications.
+            </li>
+            <li>
+              Improved retrieval-augmented generation through document chunking,
+              embedding configuration, and entity and metadata enrichment.
+            </li>
+            <li>
+              Built a pipeline to crawl Government of Canada documentation,
+              process website content, and generate structured chunks for
+              retrieval.
+            </li>
+            <li>
+              Configured Azure AI Search data sources, indexers, and indexes
+              with Blob Storage, connecting the ingestion pipeline to two
+              departmental knowledge bases.
+            </li>
+            <li>
+              Developed an LLM evaluation framework using lexical, semantic,
+              entailment, faithfulness, and LLM-as-judge metrics; presented the
+              work at the CSA’s Community of Practice.
+            </li>
+            <li>
+              Published two open-source tutorial collections on the CSA’s GitHub
+              for extracting, visualizing, and analyzing auroral imagery and
+              magnetometer and riometer data.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <div class="entry-heading">
+            <h3>Civiconnect</h3>
+            <span>2024</span>
+          </div>
+          <p class="role">Software Developer · St. Catharines, ON</p>
+          <ul>
+            <li>
+              Built a restaurant procurement website consolidating ordering from
+              multiple suppliers using React, Next.js, Tailwind CSS, and
+              PostgreSQL.
+            </li>
+            <li>
+              Designed the PostgreSQL schema in Supabase with foreign key
+              constraints, authentication, and row-level security.
+            </li>
+          </ul>
+        </article>
+      </section>
+      <section aria-labelledby="projects">
+        <h2 id="projects">Projects</h2>
+        <article>
+          <div class="entry-heading">
+            <h3>MidiMotion · Python, OpenCV</h3>
+            <a href="https://github.com/hemalr24/midimotion">GitHub ↗</a>
+          </div>
+          <p>
+            Developed a real-time computer vision system translating hand
+            gestures into MIDI control commands for a BOSS Katana guitar
+            amplifier.
+          </p>
+        </article>
+        <article>
+          <div class="entry-heading">
+            <h3>PronouncedFish · Capstone</h3>
+            <span>Design phase</span>
+          </div>
+          <p>
+            Planning a speech-practice platform with a five-person team,
+            combining pronunciation API feedback and clinician progress
+            tracking. Proposed stack: React, FastAPI, PostgreSQL.
+          </p>
+        </article>
+        <article>
+          <div class="entry-heading">
+            <h3>Open-Source Space Data Tutorials · CSA</h3>
+            <span
+              ><a href="https://github.com/asc-csa/THEMIS_Tutorial">THEMIS ↗</a>
+              ·
+              <a href="https://github.com/asc-csa/CARISMA-CANOPUS_Tutorial"
+                >CARISMA ↗</a
+              ></span
+            >
+          </div>
+          <p>
+            Published English/French tutorials covering auroral image processing
+            and animation, sensor time-series parsing, and magnetometer/riometer
+            visualization.
+          </p>
+        </article>
+        <article>
+          <div class="entry-heading">
+            <h3>NLP Fine-tuning & Benchmarking · Python</h3>
+            <a href="https://github.com/hemalr24/codabench-competitions"
+              >GitHub ↗</a
+            >
+          </div>
+          <p>
+            Compared transformer models across three classification tasks;
+            expanded the news training data to improve Codabench submission
+            accuracy from 69% to 91%.
+          </p>
+        </article>
+      </section>
+      <section aria-labelledby="skills">
+        <h2 id="skills">Technologies</h2>
+        <p><strong>Languages:</strong> Python, C++, JavaScript, Java, SQL</p>
+        <p>
+          <strong>Frameworks & libraries:</strong> Flask, React, Next.js,
+          Hugging Face Transformers, OpenCV, Tailwind CSS
+        </p>
+        <p>
+          <strong>Cloud & data:</strong> Azure AI Search, Blob Storage, App
+          Service, AI Foundry, PostgreSQL, Supabase
+        </p>
+        <p><strong>Tools:</strong> Git, Docker, Linux, MLflow, Jupyter</p>
+      </section>
+    </main>
+  </body>
+</html>
