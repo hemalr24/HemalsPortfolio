@@ -27,11 +27,26 @@
       #contact { padding-block: 44px; background: var(--paper); }
       #contact h2 { font-size: clamp(30px, 3.5vw, 42px); letter-spacing: -0.04em; }
       #contact .contact-email { font-size: clamp(17px, 1.8vw, 22px); }
+      .robotics-project { min-width: 0; }
+      .robotics-project .robotics-layout { display: grid; grid-template-columns: 1fr; gap: 22px; }
+      .robotics-project .robotics-scope { border-top: 1px solid var(--line); padding-top: 18px; }
+      .robotics-project .robotics-scope p:first-child { margin-top: 0; }
       @media (max-width: 680px) {
+        .robotics-project .robotics-layout { grid-template-columns: 1fr; gap: 22px; }
+        .robotics-project .robotics-scope { border-left: 0; border-top: 1px solid var(--line); padding: 18px 0 0; }
         #home { padding-top: 36px; }
         #home .hero-visual { max-width: 330px; justify-self: center; }
         #contact { padding-block: 36px; }
       }
+      .earlier-work { margin-top: 24px; padding: 24px 28px; border: 1px solid var(--line); }
+      .earlier-work h3 { font-size: 23px; margin-top: 14px; }
+      .earlier-work .earlier-description { max-width: 760px; margin-top: 12px; font-size: 14px; color: var(--muted); }
+      .earlier-work .project-link { margin-top: 16px; }
+      .contact-options { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 18px; }
+      .contact-options button { border: 1px solid var(--ink); background: transparent; color: var(--ink); padding: 8px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+      .contact-options button:hover { background: var(--ink); color: var(--paper); }
+      .contact-options a { font-size: 12px; text-decoration: underline; text-underline-offset: 4px; }
+      #copy-email-status { min-height: 1.5em; margin-top: 8px; font-size: 12px; color: var(--muted); }
     </style>
     <script src="script.js" defer></script>
   </head>
@@ -69,7 +84,7 @@
           <div class="hero-actions">
             <a class="button" href="#work"
               >View my work <span aria-hidden="true">↘</span></a
-            ><a class="text-link" href="mailto:rajput.hemal01@gmail.com"
+            ><a class="text-link" href="#contact"
               >Get in touch <span aria-hidden="true">↗</span></a
             >
           </div>
@@ -289,6 +304,16 @@
               >
             </div>
           </article>
+          <article class="project-card compact-card">
+            <div class="project-content">
+              <div class="project-meta"><span>02 / AI & mobile software</span><span class="pill">Prototype</span></div>
+              <h3>SneakPeek</h3>
+              <p>A footwear-identification app with a React Native interface and Flask backend. Image uploads flow through a DenseNet classifier and vision-language APIs, with identification results collected into a shared response.</p>
+              <p class="small-copy">The prototype includes image-backed posts, a feed, and comments stored in SQLite. Its focus is connecting the mobile experience to several model outputs.</p>
+              <div class="tags"><span>React Native / Expo</span><span>Flask</span><span>PyTorch</span><span>SQLite</span></div>
+              <a class="project-link" href="https://github.com/hemalr24/SneakPeek">Explore the prototype <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
           <article class="project-card">
             <div class="project-visual science-visual" aria-hidden="true">
               <span class="visual-kicker"
@@ -314,7 +339,7 @@
             </div>
             <div class="project-content">
               <div class="project-meta">
-                <span>02 / Scientific data</span><span>Published at CSA</span>
+                <span>03 / Scientific data</span><span>Published at CSA</span>
               </div>
               <h3>Space data, made accessible.</h3>
               <p>
@@ -342,7 +367,7 @@
           <article class="project-card compact-card">
             <div class="project-content">
               <div class="project-meta">
-                <span>03 / Machine learning</span><span>Course project</span>
+                <span>04 / Machine learning</span><span>Course project</span>
               </div>
               <h3>Beyond the first model.</h3>
               <p>
@@ -352,7 +377,7 @@
               </p>
               <div class="result">
                 <strong
-                  >69<span>%</span> <span class="result-arrow">→</span> 91<span
+                  >69<span>%</span> <span class="result-arrow">→</span> 74<span
                     >%</span
                   ></strong
                 ><span
@@ -374,7 +399,7 @@
           <article class="project-card compact-card capstone-card">
             <div class="project-content">
               <div class="project-meta">
-                <span>04 / Capstone</span><span class="pill">Design phase</span>
+                <span>05 / Capstone</span><span class="pill">Design phase</span>
               </div>
               <h3>PronouncedFish</h3>
               <p>
@@ -396,7 +421,45 @@
               </p>
             </div>
           </article>
+          <article class="project-card compact-card robotics-project">
+            <div class="project-content">
+              <div class="project-meta">
+                <span>06 / Mobile robotics</span><span class="pill">Work in progress</span>
+              </div>
+              <div class="robotics-layout">
+                <div>
+                  <h3>Mobile Robot Path Tracking</h3>
+                  <p>
+                    Planning a simulated two-wheel robot that follows predefined
+                    routes using a C++ controller. The goal is to understand how
+                    sensor noise and imperfect position estimates affect its motion.
+                  </p>
+                  <div class="tags">
+                    <span>Planned: C++</span><span>ROS 2</span><span>Gazebo</span><span>Python</span>
+                  </div>
+                </div>
+                <div class="robotics-scope">
+                  <p class="small-copy"><strong>First milestone</strong><br>
+                    Implement a pure-pursuit controller and measure tracking error
+                    across straight, circular, and curved routes.</p>
+                  <p class="small-copy"><strong>Next questions</strong><br>
+                    How does wheel odometry affect tracking? Can sensor fusion
+                    improve the position estimate?</p>
+                </div>
+              </div>
+              <p class="project-status">
+                <span class="status-dot muted-dot" aria-hidden="true"></span>
+                Planning stage · Implementation and results to follow
+              </p>
+            </div>
+          </article>
         </div>
+        <aside class="earlier-work" aria-labelledby="earlier-title">
+          <p class="eyebrow">Earlier experiments / Game development</p>
+          <h3 id="earlier-title">Super Hemmie-o</h3>
+          <p class="earlier-description">A Python/Pygame platformer with double-jump movement, sprite animation, mask-based collision detection, collectible fruit, hazards, and a scrolling camera. A hands-on exploration of game loops and interactive systems.</p>
+          <a class="project-link" href="https://github.com/hemalr24/Super-Hemmie-o">View the game code <span aria-hidden="true">↗</span></a>
+        </aside>
       </section>
 
       <section
@@ -531,9 +594,13 @@
             Open to conversations about software, AI, and robotics opportunities
             for 2027 graduates.
           </p>
-          <a class="contact-email" href="mailto:rajput.hemal01@gmail.com"
-            >rajput.hemal01@gmail.com <span aria-hidden="true">↗</span></a
-          >
+          <span class="contact-email" id="email-address">rajput.hemal01@gmail.com</span>
+          <div class="contact-options">
+            <button type="button" id="copy-email" hidden>Copy email address</button>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=rajput.hemal01%40gmail.com" target="_blank" rel="noopener noreferrer">Open Gmail ↗</a>
+            <a href="mailto:rajput.hemal01@gmail.com">Open email app ↗</a>
+          </div>
+          <p id="copy-email-status" role="status" aria-live="polite"></p>
           <div class="contact-social">
             <a href="https://github.com/hemalr24">GitHub ↗</a
             ><a href="https://www.linkedin.com/in/hemal-rajput/">LinkedIn ↗</a
@@ -549,5 +616,24 @@
       <p>Hemal Rajput · <span id="year">2026</span></p>
       <a href="#home">Back to top ↑</a>
     </footer>
+    <script>
+      const copyEmailButton = document.getElementById("copy-email");
+      const emailAddress = document.getElementById("email-address");
+      const copyEmailStatus = document.getElementById("copy-email-status");
+      copyEmailButton.hidden = false;
+      copyEmailButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(emailAddress.textContent.trim());
+          copyEmailStatus.textContent = "Email address copied.";
+        } catch {
+          const range = document.createRange();
+          range.selectNodeContents(emailAddress);
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+          copyEmailStatus.textContent = "Email selected. Use your browser’s Copy command to copy it.";
+        }
+      });
+    </script>
   </body>
 </html>
