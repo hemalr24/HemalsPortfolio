@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta
+      name="description"
+      content="Hemal Rajput: software engineering at McMaster, AI systems at the Canadian Space Agency, and projects in robotics and scientific computing."
+    />
+    <title>Experience — Hemal Rajput</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="index.html" aria-label="Hemal Rajput, home"
+        >hemal<span>.</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="index.html">Overview</a
+        ><a href="experience.html" aria-current="page">Experience</a
+        ><a href="projects.html">Projects</a><a href="resume.html">Résumé</a
+        ><a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="wrap" id="main">
+      <section class="page-heading">
+        <p class="eyebrow">Experience</p>
+        <h1>From application code<br />to the systems behind it.</h1>
+        <p>
+          AI applications at the Canadian Space Agency, full-stack development
+          at Civiconnect, and earlier work with industrial automation.
+        </p>
+      </section>
+      <article aria-labelledby="csa-title" class="feature" id="csa">
+        <div class="feature-heading">
+          <span class="eyebrow">Canadian Space Agency · 2025–Present</span
+          ><span class="pill dark-pill">Internal AI platform</span>
+        </div>
+        <div class="feature-grid">
+          <div>
+            <h3 id="csa-title">
+              One shared core.<br />Two departmental<br /><em
+                >AI assistants.</em
+              >
+            </h3>
+            <p>
+              HR and Grants had similar assistants with duplicated frontends and
+              backends. I unified the common code and worked across retrieval,
+              ingestion, Azure infrastructure, and evaluation as part of a
+              two-intern team.
+            </p>
+            <div class="tags dark-tags">
+              <span>Python / Flask</span><span>JavaScript</span
+              ><span>Azure AI Search</span><span>RAG</span>
+            </div>
+          </div>
+          <div aria-label="Simplified platform structure" class="platform-map">
+            <p class="diagram-caption">SHARED PLATFORM / SIMPLIFIED VIEW</p>
+            <div class="map-source">Government documentation</div>
+            <div aria-hidden="true" class="map-line"></div>
+            <div class="map-ingest">
+              Crawler &amp; chunking <span>→</span> Blob Storage
+            </div>
+            <div aria-hidden="true" class="map-line"></div>
+            <div class="map-core">
+              <span aria-hidden="true" class="core-mark">✳</span
+              ><strong>Shared application core</strong
+              ><small>Retrieval · Prompts · Chat</small>
+            </div>
+            <div aria-hidden="true" class="map-branches"></div>
+            <div class="map-departments">
+              <span>HR assistant</span><span>Grants assistant</span>
+            </div>
+            <p class="map-evaluation">
+              ↳ Evaluation against human reference answers
+            </p>
+          </div>
+        </div>
+        <div class="feature-details">
+          <details>
+            <summary>
+              <span>01</span> Architecture &amp; refactoring
+              <span aria-hidden="true" class="expand">+</span>
+            </summary>
+            <p>
+              Extracted shared backend and frontend logic while preserving
+              department-specific workflows and knowledge bases. A fix to the
+              shared core can now serve both applications.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <span>02</span> Ingestion &amp; retrieval
+              <span aria-hidden="true" class="expand">+</span>
+            </summary>
+            <p>
+              Built a crawler for Government of Canada documentation and
+              connected its output through Blob Storage, search data sources,
+              indexers, and indexes. Refined chunking, embedding configuration,
+              entities, and metadata for retrieval.
+            </p>
+          </details>
+          <details>
+            <summary>
+              <span>03</span> Evaluation &amp; iteration
+              <span aria-hidden="true" class="expand">+</span>
+            </summary>
+            <p>
+              Developed a framework comparing assistant outputs with human
+              reference answers across lexical, semantic, entailment,
+              faithfulness, and LLM-as-judge metrics. Presented the work at the
+              CSA’s Community of Practice.
+            </p>
+          </details>
+        </div>
+        <p class="feature-footnote">
+          A high-level account of my contributions. The internal application and
+          its source code are not public.
+        </p>
+      </article>
+      <section class="section-block" aria-label="Work history">
+        <div class="experience-list">
+          <article class="experience-row">
+            <div class="experience-date">
+              SEPT 2025 — PRESENT<span class="current-marker">Current</span>
+            </div>
+            <div>
+              <h3>Canadian Space Agency</h3>
+              <p class="role">
+                Data Scientist and Artificial Intelligence · Longueuil, QC
+              </p>
+              <p>
+                Shared AI application architecture, retrieval and ingestion
+                infrastructure, evaluation tools, and public scientific-data
+                tutorials. Work spanning the application code and its Azure
+                services.
+              </p>
+            </div>
+            <a
+              aria-label="Read about my Canadian Space Agency work"
+              class="experience-arrow"
+              href="#csa"
+              >↗</a
+            >
+          </article>
+          <article class="experience-row">
+            <div class="experience-date">2024</div>
+            <div>
+              <h3>Civiconnect</h3>
+              <p class="role">Software Developer · St. Catharines, ON</p>
+              <p>
+                Built a custom restaurant procurement site to bring ordering
+                from multiple suppliers into one workflow. Designed its
+                PostgreSQL schema and implemented authentication and row-level
+                security with Supabase.
+              </p>
+            </div>
+            <span aria-hidden="true" class="experience-number">02</span>
+          </article>
+          <article class="experience-row">
+            <div class="experience-date">SUMMERS 2022–2023</div>
+            <div>
+              <h3>Van der Graaf</h3>
+              <p class="role">Summer Engineering Intern · Brampton, ON</p>
+              <p>
+                Programmed a soldering robot for repetitive tasks and created
+                and debugged CNC machine programs. An early connection between
+                the code I write and the physical world.
+              </p>
+            </div>
+            <span aria-hidden="true" class="experience-number">03</span>
+          </article>
+        </div>
+      </section>
+      <section class="service-card">
+        <p class="eyebrow">Leadership & service · 2025–2026</p>
+        <h2>NASA International Space Apps Challenge</h2>
+        <p class="role">CSA Mentor & Judge</p>
+        <p>
+          Guided teams in using Canadian space datasets and evaluated project
+          submissions against challenge-specific judging criteria.
+        </p>
+        <p class="small-copy">
+          Served in 2025; selected to return for the 2026 season.
+        </p>
+      </section>
+      <section
+        aria-labelledby="about-title"
+        class="about-section wrap"
+        id="about"
+      >
+        <div class="about-intro">
+          <p class="eyebrow">Education &amp; technical background</p>
+          <h2 id="about-title">Across software and physical systems.</h2>
+          <p>
+            I’m studying software engineering at McMaster, with a minor in
+            biochemistry. My interests meet at the edges of disciplines: AI and
+            evaluation, software and sensors, music and computer vision.
+          </p>
+          <p>
+            I’m also exploring mobile robotics. Coursework in controls, signals,
+            and real-time systems has me interested in what happens when
+            software has to understand and act in the physical world.
+          </p>
+          <div class="education-note">
+            <strong>McMaster University</strong
+            ><span>BEng, Software Engineering · Expected May 2027</span
+            ><span>Minor in Biochemistry · GPA 3.73 / 4.0</span>
+          </div>
+        </div>
+        <div class="toolbox">
+          <p class="eyebrow">Tools I work with</p>
+          <dl>
+            <div>
+              <dt>Languages</dt>
+              <dd>Python · C++ · JavaScript · Java · SQL</dd>
+            </div>
+            <div>
+              <dt>Applications &amp; AI</dt>
+              <dd>
+                Flask · React · Next.js · Hugging Face Transformers · OpenCV
+              </dd>
+            </div>
+            <div>
+              <dt>Cloud &amp; data</dt>
+              <dd>
+                Azure AI Search · Blob Storage · App Service · AI Foundry ·
+                PostgreSQL · Supabase
+              </dd>
+            </div>
+            <div>
+              <dt>Development</dt>
+              <dd>Git · Linux · Docker · Jupyter · MLflow</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer wrap">
+      <span>Hemal Rajput · <span id="year">2026</span></span>
+      <div>
+        <a href="https://github.com/hemalr24">GitHub ↗</a
+        ><a href="https://www.linkedin.com/in/hemal-rajput/">LinkedIn ↗</a
+        ><a href="contact.html">Get in touch ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

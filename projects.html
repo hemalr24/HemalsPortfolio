@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <meta
+      name="description"
+      content="Hemal Rajput: software engineering at McMaster, AI systems at the Canadian Space Agency, and projects in robotics and scientific computing."
+    />
+    <title>Projects — Hemal Rajput</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="wordmark" href="index.html" aria-label="Hemal Rajput, home"
+        >hemal<span>.</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="index.html">Overview</a><a href="experience.html">Experience</a
+        ><a href="projects.html" aria-current="page">Projects</a
+        ><a href="resume.html">Résumé</a><a href="contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="wrap" id="main">
+      <section class="page-heading">
+        <p class="eyebrow">Projects</p>
+        <h1>Code you can explore.</h1>
+        <p>
+          Selected work in robotics, scientific computing, and applied AI. Each
+          project links to its source; planned work is marked explicitly.
+        </p>
+      </section>
+      <section class="project-grid" aria-label="Selected projects">
+        <article
+          class="project-card compact-card robotics-project"
+          id="waypoint"
+        >
+          <div class="project-content">
+            <div class="project-meta">
+              <span>Mobile robotics</span
+              ><span class="pill">In development</span>
+            </div>
+            <h2>Waypoint</h2>
+            <p class="project-subtitle">
+              Mobile robot tracking &amp; state estimation
+            </p>
+            <p>
+              Implemented a C++ pure-pursuit controller and a planar extended
+              Kalman filter that fuses wheel-encoder and gyroscope measurements.
+            </p>
+            <p>
+              Python experiments compare ground-truth, odometry, and EKF
+              feedback across routes and disturbances, measuring tracking error,
+              localization error, endpoint accuracy, and success.
+            </p>
+            <div class="tags">
+              <span>C++17</span><span>Python</span><span>Pure pursuit</span
+              ><span>EKF</span>
+            </div>
+            <a class="project-link" href="https://github.com/hemalr24/Waypoint"
+              >Code &amp; experiments ↗</a
+            >
+          </div>
+        </article>
+        <article class="project-card" id="space-data">
+          <div class="project-content">
+            <div class="project-meta">
+              <span>Scientific data</span><span>Published at CSA</span>
+            </div>
+            <h3>Open-source space data tutorials</h3>
+            <p>
+              Two English/French tutorial collections for working with THEMIS
+              auroral imagery and CARISMA/CANOPUS measurements: downloading,
+              parsing, plotting, and animation.
+            </p>
+            <div class="tags">
+              <span>Python</span><span>Jupyter</span
+              ><span>Data visualization</span>
+            </div>
+            <div class="project-links">
+              <a
+                class="project-link"
+                href="https://github.com/asc-csa/THEMIS_Tutorial"
+                >THEMIS <span aria-hidden="true">↗</span></a
+              ><a
+                class="project-link"
+                href="https://github.com/asc-csa/CARISMA-CANOPUS_Tutorial"
+                >CARISMA / CANOPUS <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </div>
+        </article>
+        <article class="project-card compact-card">
+          <div class="project-content">
+            <div class="project-meta">
+              <span>Machine learning</span><span>Course project</span>
+            </div>
+            <h3>NLP fine-tuning &amp; benchmarking</h3>
+            <p>
+              Transformer experiments across news, book-blurb, and
+              emergency-call classification. Compared approaches and expanded
+              the news training data.
+            </p>
+            <div class="result">
+              <strong
+                >69<span>%</span> <span class="result-arrow">→</span> 74<span
+                  >%</span
+                ></strong
+              ><span
+                >News classification accuracy<br />Reported Codabench submission
+                results</span
+              >
+            </div>
+            <div class="tags">
+              <span>Hugging Face</span><span>Python</span
+              ><span>Model evaluation</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/hemalr24/codabench-competitions"
+              >Experiments &amp; report <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </article>
+        <article class="project-card compact-card capstone-card">
+          <div class="project-content">
+            <div class="project-meta">
+              <span>Capstone</span><span class="pill">Design phase</span>
+            </div>
+            <h3>PronouncedFish</h3>
+            <p>
+              A planned speech-practice platform with a five-person team:
+              browser audio capture, phoneme-level API feedback, and a clinician
+              dashboard.
+            </p>
+            <p class="small-copy">
+              The question we want to investigate: how well does automated
+              feedback agree with a speech-language pathologist’s ratings?
+            </p>
+            <div class="tags">
+              <span>Proposed: React</span><span>FastAPI</span
+              ><span>PostgreSQL</span>
+            </div>
+            <p class="project-status">
+              <span aria-hidden="true" class="status-dot muted-dot"></span
+              >Requirements &amp; architecture · Implementation not started
+            </p>
+          </div>
+        </article>
+      </section>
+      <details class="other-projects">
+        <summary>
+          More projects <span>Computer vision, mobile software & games</span>
+        </summary>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <span>Computer vision</span><span>Personal project</span>
+              </div>
+              <h3>MidiMotion<span aria-hidden="true">↗</span></h3>
+              <p>
+                Your hands become the interface. A Python and OpenCV project
+                that translates hand gestures into MIDI commands for a BOSS
+                Katana guitar amplifier.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>OpenCV</span><span>MIDI</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://github.com/hemalr24/midimotion"
+                >Explore the code <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </article>
+          <article class="project-card compact-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <span>AI &amp; mobile software</span
+                ><span class="pill">Prototype</span>
+              </div>
+              <h3>SneakPeek</h3>
+              <p>
+                A footwear-identification app with a React Native interface and
+                Flask backend. Image uploads flow through a DenseNet classifier
+                and vision-language APIs, with identification results collected
+                into a shared response.
+              </p>
+              <p class="small-copy">
+                The prototype includes image-backed posts, a feed, and comments
+                stored in SQLite. Its focus is connecting the mobile experience
+                to several model outputs.
+              </p>
+              <div class="tags">
+                <span>React Native / Expo</span><span>Flask</span
+                ><span>PyTorch</span><span>SQLite</span>
+              </div>
+              <a
+                class="project-link"
+                href="https://github.com/hemalr24/SneakPeek"
+                >Explore the prototype <span aria-hidden="true">↗</span></a
+              >
+            </div>
+          </article>
+        </div>
+        <aside aria-labelledby="earlier-title" class="earlier-work">
+          <p class="eyebrow">Earlier experiments / Game development</p>
+          <h3 id="earlier-title">Super Hemmie-o</h3>
+          <p class="earlier-description">
+            A Python/Pygame platformer with double-jump movement, sprite
+            animation, mask-based collision detection, collectible fruit,
+            hazards, and a scrolling camera. A hands-on exploration of game
+            loops and interactive systems.
+          </p>
+          <a
+            class="project-link"
+            href="https://github.com/hemalr24/Super-Hemmie-o"
+            >View the game code <span aria-hidden="true">↗</span></a
+          >
+        </aside>
+      </details>
+    </main>
+    <footer class="site-footer wrap">
+      <span>Hemal Rajput · <span id="year">2026</span></span>
+      <div>
+        <a href="https://github.com/hemalr24">GitHub ↗</a
+        ><a href="https://www.linkedin.com/in/hemal-rajput/">LinkedIn ↗</a
+        ><a href="contact.html">Get in touch ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>
